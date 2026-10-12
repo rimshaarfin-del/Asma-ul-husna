@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1">
+    <title>Asma-ul-Husna  . 99 Names of Allah</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            
+              --sky1: #0b0f2e;
+              --sky2: #1a1c4d;
+              --gold: #e8c777;
+              --pearl: #9fa3c9;
+        }
+        * {box-sizing: border-box; margin:0;}
+        body {
+            min-height: 100vh;
+            color: var(--pearl);
+            font-family: "Cormorant Garamond", Georgia, serif;
+            background:
+            radial-gradient(circle at 50% 0%, #3a2f7a55, transparent 55%),
+            radial-gradient(circle at 10% 90%, #1d5a7a33, transparent 45%),
+            linear-gradient(180deg, var(--sky2), var(--sky1) 60%);
+            background-attachment: fixed;
+        }
+        .ar { font-family: "Amiri", "Traditional Arabic", serif; direction: rt1; }
+
+        header { text-align: center; padding: 11vh 1.5rem 4vh; }
+        header .ar {
+            font-size: clamp(3rem, 11vm, 6.5rem); line-height: 1.4;
+            background: linear-gradient(90deg, #b8913f, #fff1c4, #e8c777, #b8913f);
+            background-size: 250% 100%;
+            -webkit-background-clip: text; background-clip: text; color: transparent;
+            animation: shine 6s ease-in-out 1 forward;
+        }
+        @keyframes shine { from { background-position: 100% 0;} to { background-position: 0 0; } }
+        header h1 { font-weight: 400; font-style: italic; font-size: clamp(1.3rem, 4vw, 1.9rem); margin-top: .3rem; }
+        header p { color: var(--mist); margin-top: .6rem; font-size: 1.15rem; }
+
+
+        .search { margin: 2rem auto 0; max-width: 24rem; }
+        .search input {
+            width: 100%; padding: .75rem 1.2rem; font: inherit; font-size: 1.1rem; text-align: center;
+            color: var(--pearl); background: #ffffff0f; border: 1px solid #e8c77755; border-radius: 999px;
+        }
+        .search input::placeholder { color: var(--mist); }
+        .search input:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+        main {
+            max-width: 1200px; margin: 0 auto; padding: 2.5rem 1rem 6rem;
+            display: grid; gap:2.2rem 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
+        .item { text-align: center; cursor: pointer; background: none; border: 0; color: inherit; font: inherit; padding: 0; }
+        .medal {
+            position: relative; width: 140px; height: 140px; margin: 0 auto;
+            border-radius: 50%; display: grid; place-items: center;
+            background: radial-gradient(circle at 50% 35%, #2b2d6b, #12153a 70%);
+            border: 1px solid #e8c77780;
+            box-shadow: 0 0 0 6px #0b0f2e, 0 0 0 7px #e8c77740, inset 0 0 25px #00000066;
+            transition: box-shadow .3s, transform .3s;
+        }
+        .medal .ar{
+            font-size: 2.1rem; line-height: 1.5; color: var(--gold);
+            text-shadow: 0 0 18px #e8c77766; padding: 0 .6rem;
+        }
+        .medal.long .ar { font-size: 1.35rem; }
+        .medal .n {
+            position: absolute; top: 10px; left: 50%; transform: translatex(-50%);
+            font-size: .8rem; color: var(--mist);
+        }
+        .item:hover .medal, .item:focus-visible .medal {
+            transform: scale(1.06);
+            box-shadow: 0 0 0 6px #0b0f2e, 0 0 0 7px var(--gold), 0 0 35px #e8c77755, inset 0 0 25px #00000066;
+        }
+        .item:focus-visible { outline: none;}
+        .tr { display: block; margin-top: 1rem; font-weight: 600; font-size: 1.2rem; }
+        .en { display: block; color: var(--mist); font-style: italic; font-size: 1.05rem; line-height: 1.3;}
+        .empty { grid-column: 1 / -1;  text-align: center; color: var(--mist); font-size: 1.2rem; }
+
+        dialog {
+            margin: auto; width: min(92vw, 28rem); padding: 2.5rem 1.5rem 2rem; text-align: center;
+            color:var(--pearl); background: linear-gradient(180deg, var(--sky2), var(--sky1));
+            border: 1px solid var(--gold); border-radius: 32px;
+        }
+        dialog::backdrop { background: #03061acc; backdrop-filter: blur(5px);}
+        dialog .num { color: var(--mist); }
+        dialog h2 { font-size: clamp(4rem, 20vw, 6.5rem); line-height: 1.4; color: var(--gold); text-shadow: 0 0 30px #e8c77766; }
+        dialog p { color: var(--mist); font-style: italic; font-size: 1.35rem;}
+        dialog .nav { diaplay: flex; justify-content: space-between; margin-top: 1.8rem; }
+        dialog button {
+            font: inherit; font-size: 1.1rem; color: var(--pearl); background: none; cursor: pointer;
+            border: 1px solid #e8c77755; border-radius: 999px; padding: .4rem 1.2rem;
+        }
+        dialog button:hover, dialog button:focus-visible { border-color: var(--gold); outline: none; }
+
+        @media (prefers-reduced-motion: reduce) {
+            header .ar { animation: none; }
+            .medal { transition: none; }
+        }
+    </style>
+    </head>
+    <body>
+
+        <header>
+            <div class="ar" lang="ar">أَسْمَاءُ اللّٰهِ الْحُسْنَىٰ</div>
+  <h1>The 99 Beautiful Names of Allah</h1>
+  <p>Tap any name to see it in full.</p>
+  <div class="search">
+    <input id="q" type="search" placeholder="Search a name or meaning" aria-label="Search names">
+  </div>
+</header>
+
+<main id="grid"></main>
+
+<dialog id="dlg" aria-labelledby="d-tr">
+  <div class="num" id="d-n"></div>
+  <div class="ar big" id="d-ar" lang="ar"></div>
+  <h2 id="d-tr"></h2>
+  <p id="d-en"></p>
+  <div class="nav">
+    <button id="prev">Previous</button>
+    <button id="close">Close</button>
+    <button id="next">Next</button>
+  </div>
+</dialog>
+
+<script>
+const NAMES = [
+["الرحمن","Ar-Rahman","The Most Merciful"],
+["الرحيم","Ar-Raheem","The Most Compassionate"],
+["الملك","Al-Malik","The King"],
+["القدوس","Al-Quddus","The Most Holy"],
+["السلام","As-Salam","The Source of Peace"],
+["المؤمن","Al-Mu'min","The Granter of Security"],
+["المهيمن","Al-Muhaymin","The Guardian"],
+["العزيز","Al-Aziz","The Almighty"],
+["الجبار","Al-Jabbar","The Compeller"],
+["المتكبر","Al-Mutakabbir","The Supreme"],
+["الخالق","Al-Khaliq","The Creator"],
+["البارئ","Al-Bari'","The Evolver"],
+["المصور","Al-Musawwir","The Fashioner"],
+["الغفار","Al-Ghaffar","The Constant Forgiver"],
+["القهار","Al-Qahhar","The Subduer"],
+["الوهاب","Al-Wahhab","The Bestower"],
+["الرزاق","Ar-Razzaq","The Provider"],
+["الفتاح","Al-Fattah","The Opener"],
+["العليم","Al-Alim","The All-Knowing"],
+["القابض","Al-Qabid","The Withholder"],
+["الباسط","Al-Basit","The Expander"],
+["الخافض","Al-Khafid","The Abaser"],
+["الرافع","Ar-Rafi'","The Exalter"],
+["المعز","Al-Mu'izz","The Honorer"],
+["المذل","Al-Mudhill","The Humiliator"],
+["السميع","As-Sami'","The All-Hearing"],
+["البصير","Al-Basir","The All-Seeing"],
+["الحكم","Al-Hakam","The Judge"],
+["العدل","Al-Adl","The Utterly Just"],
+["اللطيف","Al-Latif","The Subtle One"],
+["الخبير","Al-Khabir","The All-Aware"],
+["الحليم","Al-Halim","The Forbearing"],
+["العظيم","Al-Azim","The Magnificent"],
+["الغفور","Al-Ghafur","The Great Forgiver"],
+["الشكور","Ash-Shakur","The Appreciative"],
+["العلي","Al-Ali","The Most High"],
+["الكبير","Al-Kabir","The Most Great"],
+["الحفيظ","Al-Hafiz","The Preserver"],
+["المقيت","Al-Muqit","The Sustainer"],
+["الحسيب","Al-Hasib","The Reckoner"],
+["الجليل","Al-Jalil","The Majestic"],
+["الكريم","Al-Karim","The Generous"],
+["الرقيب","Ar-Raqib","The Watchful"],
+["المجيب","Al-Mujib","The Responsive"],
+["الواسع","Al-Wasi'","The All-Encompassing"],
+["الحكيم","Al-Hakim","The All-Wise"],
+["الودود","Al-Wadud","The Loving"],
+["المجيد","Al-Majid","The Glorious"],
+["الباعث","Al-Ba'ith","The Resurrector"],
+["الشهيد","Ash-Shahid","The Witness"],
+["الحق","Al-Haqq","The Truth"],
+["الوكيل","Al-Wakil","The Trustee"],
+["القوي","Al-Qawiyy","The Strong"],
+["المتين","Al-Matin","The Firm"],
+["الولي","Al-Waliyy","The Protecting Friend"],
+["الحميد","Al-Hamid","The Praiseworthy"],
+["المحصي","Al-Muhsi","The Accounter"],
+["المبدئ","Al-Mubdi'","The Originator"],
+["المعيد","Al-Mu'id","The Restorer"],
+["المحيي","Al-Muhyi","The Giver of Life"],
+["المميت","Al-Mumit","The Bringer of Death"],
+["الحي","Al-Hayy","The Ever-Living"],
+["القيوم","Al-Qayyum","The Self-Subsisting"],
+["الواجد","Al-Wajid","The Finder"],
+["الماجد","Al-Majid","The Noble"],
+["الواحد","Al-Wahid","The One"],
+["الأحد","Al-Ahad","The Unique"],
+["الصمد","As-Samad","The Eternal Refuge"],
+["القادر","Al-Qadir","The All-Powerful"],
+["المقتدر","Al-Muqtadir","The Determiner"],
+["المقدم","Al-Muqaddim","The Expediter"],
+["المؤخر","Al-Mu'akhkhir","The Delayer"],
+["الأول","Al-Awwal","The First"],
+["الآخر","Al-Akhir","The Last"],
+["الظاهر","Az-Zahir","The Manifest"],
+["الباطن","Al-Batin","The Hidden"],
+["الوالي","Al-Wali","The Governor"],
+["المتعالي","Al-Muta'ali","The Most Exalted"],
+["البر","Al-Barr","The Source of Goodness"],
+["التواب","At-Tawwab","The Acceptor of Repentance"],
+["المنتقم","Al-Muntaqim","The Avenger"],
+["العفو","Al-Afuww","The Pardoner"],
+["الرؤوف","Ar-Ra'uf","The Compassionate"],
+["مالك الملك","Malik-ul-Mulk","Owner of All Sovereignty"],
+["ذو الجلال والإكرام","Dhul-Jalali wal-Ikram","Lord of Majesty and Generosity"],
+["المقسط","Al-Muqsit","The Equitable"],
+["الجامع","Al-Jami'","The Gatherer"],
+["الغني","Al-Ghani","The Self-Sufficient"],
+["المغني","Al-Mughni","The Enricher"],
+["المانع","Al-Mani'","The Preventer"],
+["الضار","Ad-Darr","The Distresser"],
+["النافع","An-Nafi'","The Benefactor"],
+["النور","An-Nur","The Light"],
+["الهادي","Al-Hadi","The Guide"],
+["البديع","Al-Badi'","The Incomparable Originator"],
+["الباقي","Al-Baqi","The Everlasting"],
+["الوارث","Al-Warith","The Inheritor"],
+["الرشيد","Ar-Rashid","The Guide to the Right Path"],
+["الصبور","As-Sabur","The Patient"]
+];
+
+const grid = document.getElementById("grid");
+const q = document.getElementById("q");
+const dlg = document.getElementById("dlg");
+let current = 0;
+
+function render(filter = "") {
+  const f = filter.trim().toLowerCase();
+  grid.innerHTML = "";
+  let shown = 0;
+  NAMES.forEach(([ar, tr, en], i) => {
+    if (f && !(tr + " " + en + " " + ar).toLowerCase().includes(f)) return;
+    const b = document.createElement("button");
+    b.className = "item";
+    b.innerHTML =
+      `<div class="medal ${ar.length > 9 ? "long" : ""}"><span class="n">${i + 1}</span><span class="ar" lang="ar">${ar}</span></div>` +
+      `<span class="tr">${tr}</span><span class="en">${en}</span>`;
+    b.onclick = () => openName(i);
+    grid.appendChild(b);
+    shown++;
+  });
+  if (!shown) grid.innerHTML = '<p class="empty">No name matches that search.</p>';
+}
+
+function openName(i) {
+  current = (i + NAMES.length) % NAMES.length;
+  const [ar, tr, en] = NAMES[current];
+  document.getElementById("d-n").textContent = `${current + 1} of 99`;
+  document.getElementById("d-ar").textContent = ar;
+  document.getElementById("d-tr").textContent = tr;
+  document.getElementById("d-en").textContent = en;
+  if (!dlg.open) dlg.showModal();
+}
+
+q.addEventListener("input", () => render(q.value));
+document.getElementById("prev").onclick = () => openName(current - 1);
+document.getElementById("next").onclick = () => openName(current + 1);
+document.getElementById("close").onclick = () => dlg.close();
+dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+
+render();
+</script>
+        </header>
+    </body>
+            
+</html>
